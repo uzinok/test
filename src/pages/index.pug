@@ -1,0 +1,79 @@
+extends templates/layout.pug
+
+block variable
+	- var pageTitle = 'BOLT-SLIDER набор плагинов для создания слайдеров на сайте.'
+	- var page = 'index'
+
+block main
+	section.container
+		h2 Описание.
+
+		ul
+			li Стили только необходимые для работы слайдера. В библиотеке нет стилей для кнопок навигации и пагинации. Элементы управления могут располагаться в любом месте html кода. Для создания кнопок пагинации передается блок в котором они будут генерироваться.
+
+			li Если не переданы или с ошибкой переданы опции в консоль выводинтся ошибка:
+				pre
+					code
+						span.color-yellow ⚠️
+						| &nbsp;Not slider options
+						|
+						span.color-yellow ⚠️
+						| &nbsp;didn't get html element: slider
+						|
+						span.color-yellow ⚠️
+						| &nbsp;didn't get html element: sliderPrew
+						|
+						span.color-yellow ⚠️
+						| &nbsp;didn't get html element: sliderNext
+						|
+						span.color-yellow ⚠️
+						| &nbsp;didn't get html element: paginationWrap
+						|
+						span.color-yellow ⚠️
+						| &nbsp;didn't get html element: slider list
+						|
+						span.color-yellow ⚠️
+						| &nbsp;didn't get html element: slider wrap list
+						|
+						span.color-yellow ⚠️
+						| &nbsp;didn't get html element: slider items
+						|
+						span.color-yellow ⚠️
+						| &nbsp;didn't get html element: slider contents
+
+			li Управление слайдером кнопками навигации и пагинации (если для пагинации передан тег #[code button]), на сенсорных устройствах касанием.
+			li При наведении курсора на слайдер и при попадании элементов слайдера в фокус автоматическое пролистывание слайдера останавливается до ухода курсора со слайдера. При клике на слайдер так же останавливается автоматическое пролистывание слайдера.
+			li Из-за доступности изначально есть адаптивная высота.
+
+	section.container
+		h2 Верстка.
+		img.center-img(src="./img/html.png", alt="пример верстки слайдера")
+
+		ul
+			li
+				p #[code .bolt-slider] - сам слайдер
+			li
+				p кнопки вперед и назад могут быть в любом месте разметки
+			li
+				p #[code .bolt-slider__list-wrap] - данный класс необходим для правильной работы слайдера
+			li
+				p #[code .bolt-slider__list] - Список слайдов, данный класс необходим для правильной работы слайдера
+			li
+				p #[code .bolt-slider__item] - элемент списка слайдов, следит за появлением самих слайдов для скрин-ридера, данный класс необходим для правильной работы слайдера
+			li
+				p #[code .bolt-slider__content] - сам слайд, когда родитель не активный #[small (не содержит класс #[code .bolt-slider__item--active])], содержимое скрыто #[small (#[code display: none])], данный класс необходим для правильной работы слайдера
+			li
+				p #[code .bolt-slider__pagination] блок для пагинации, класс может быть любой, сам блок может находиться в любом месте разметки
+
+	section.container
+		h2 Доступность.
+
+		ol
+			li
+				p для слайдера необходимо добавить атрибут #[code 'aria-label']. #[br] Этот атрибут не должен содержать слово слайдер или карусель. так как скрин-ридер озвучит #[code 'aria-roledescription'], значение которого можно изменить опционально. По умолчанию #[code 'carousel'].
+			li
+				p слайдам необходимо добавлять атрибут #[code 'aria-label']. #[br] Так же в #[code 'aria-label'] не нужно прописывать слово слайд так как скрин-ридер озвучит #[code 'aria-roledescription'], значение которого можно изменить опционально. По умолчанию #[code 'slide'].
+			li
+				p Без js слайдер имеет похожий вид, но без кнопок управления
+
+				include templates/slider-3

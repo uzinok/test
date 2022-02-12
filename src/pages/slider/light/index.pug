@@ -1,0 +1,41 @@
+extends ../../templates/layout.pug
+block variable
+	- var pageTitle = 'Простой слайдер. BOLT-SLIDER набор плагинов для создания слайдеров на сайте.'
+	- var page = 'light'
+
+block main
+	section.container
+		h2 Примеры простого слайдера
+		p Стили кнопок пагинации только для демонстрации.
+		p
+			a(href="https://github.com/uzinok/bolt-slider/blob/master/src/pages/slider/light/js/bolt-slider.js" target="_blank") js-код
+			|
+			|
+			a(href="https://github.com/uzinok/bolt-slider/blob/master/src/pages/slider/light/css/bolt-slider.less" target="_blank") less-код
+
+	section.container
+		include ../../templates/slider-1
+		pre
+			code
+				include ./js/slider-1.js
+
+		script
+			include ./js/slider-1.js
+
+	section.container
+		include ../../templates/slider-2
+		pre
+			code
+				include ./js/slider-2.js
+
+		script
+			include ./js/slider-2.js
+
+	section.container
+		include ../../templates/slider-3
+		pre
+			code
+				include ./js/slider-3.js
+
+		script
+			include ./js/slider-3.js
