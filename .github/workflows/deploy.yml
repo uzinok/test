@@ -23,9 +23,6 @@ jobs:
       - name: Installing Dependencies
         run: npm ci
 
-      - name: Linting
-        run: npm test
-
       - name: Building
         run: npm run build
 
@@ -34,5 +31,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FOLDER: ./build
-          BRANCH: gh-pages
+          BRANCH: master
           SINGLE_COMMIT: false
