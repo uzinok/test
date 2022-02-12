@@ -139,3 +139,4 @@ exports.server = server;
  * default
  */
 exports.default = series(clean, parallel(copy, lessToCss, scripts, htmlTo), server);
+exports.build = series(clean, parallel(copy, lessToCss, scripts, htmlTo));

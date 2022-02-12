@@ -4,7 +4,10 @@
 	"description": "bolt-slider набор плагинов для создания слайдеров на сайте",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "gulp",
+		"build": "gulp build",
+		"deploy": "cd build && rsync --archive --compress --delete .uzinok@yandex.ru:/build"
 	},
 	"author": "uzinok@yandex.ru",
 	"license": "ISC",

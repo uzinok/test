@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Простой слайдер. BOLT-SLIDER набор плагинов для создания слайдеров на сайте.</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="./css/bolt-slider.css"><script src="./js/bolt-slider.js"></script></head><body><div class="container"><h1>BOLT-SLIDER набор плагинов для создания слайдеров на сайте.</h1><nav><ul><li><p><a href="/">Описание проекта</a></p></li><li><p><a href="/slider/light/">Простой слайдер.</a> Слайдер с минимальным количеством опций.</p></li><li><p><a href="/slider/loop/">Простой слайдер.</a> Зацикленный.</p></li></ul></nav></div><section class="container"><h2>Примеры простого слайдера</h2><p>Стили кнопок пагинации только для демонстрации.</p><p><a href="https://github.com/uzinok/bolt-slider/blob/master/src/pages/slider/light/js/bolt-slider.js" target="_blank">js-код</a>
+<a href="https://github.com/uzinok/bolt-slider/blob/master/src/pages/slider/light/css/bolt-slider.less" target="_blank">less-код</a></p></section><section class="container"><button class="play play-1">Play/Pause</button><div class="bolt-slider slider-1 bolt-no-js"><button class="prew prew-1">Назад</button><button class="next next-1">Вперед</button><div class="bolt-slider__list-wrap"><div class="bolt-slider__list"><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Эй, <a href="#">цирюльникъ</a>, ёжик выстриги, да щетину ряхи сбрей, феном вошь за печь гони!</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Экс-граф? Плюш изъят. Бьём чуждый цен хвощ!</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Эй, жлоб! Где туз? Прячь юных съёмщиц в шкаф.</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>— Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>В чащах юга жил-был цитрус... — да, но фальшивый экземпляръ!</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Южно-эфиопский грач увёл мышь за хобот на съезд ящериц.</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Аэрофотосъёмка ландшафта уже выявила земли богачей и процветающих крестьян.</p></div></div></div></div><div class="bolt-slider__pagination pagination-1"></div></div><pre><code>const slider1 = new BoltSlider({
+	slider: '.slider-1',
+
+	roledescription: 'слайдер',
+	slideRoledescription: 'слайд',
+
+	gap: 20,
+	currentSlide: 1,
+	speed: 500,
+
+	loop: true,
+
+	autoPlay: true,
+	autoplaySpeed: 3000,
+	playButton: '.play-1',
+
+	sliderPrew: '.prew-1',
+	sliderNext: '.next-1',
+
+	paginationWrap: '.pagination-1',
+	paginationTag: 'button',
+	paginationClass: 'bolt-slider__pagination-btn',
+	paginationAria: 'Показать слайд'
+});
+</code></pre><script>const slider1 = new BoltSlider({
+	slider: '.slider-1',
+
+	roledescription: 'слайдер',
+	slideRoledescription: 'слайд',
+
+	gap: 20,
+	currentSlide: 1,
+	speed: 500,
+
+	loop: true,
+
+	autoPlay: true,
+	autoplaySpeed: 3000,
+	playButton: '.play-1',
+
+	sliderPrew: '.prew-1',
+	sliderNext: '.next-1',
+
+	paginationWrap: '.pagination-1',
+	paginationTag: 'button',
+	paginationClass: 'bolt-slider__pagination-btn',
+	paginationAria: 'Показать слайд'
+});
+</script></section><section class="container"><div class="bolt-slider slider-2 bolt-no-js"><button class="prew prew-2">Назад</button><button class="next next-2">Вперед</button><div class="bolt-slider__list-wrap"><ul class="bolt-slider__list"><li class="bolt-slider__item"><div class="bolt-slider__content"><img src="/img/1.jpg" alt="картинка 1"></div></li><li class="bolt-slider__item"><div class="bolt-slider__content"><img src="/img/2.jpg" alt="картинка 2"></div></li><li class="bolt-slider__item"><div class="bolt-slider__content"><img src="/img/3.jpg" alt="картинка 3"></div></li><li class="bolt-slider__item"><div class="bolt-slider__content"><img src="/img/4.jpg" alt="картинка 4"></div></li><li class="bolt-slider__item"><div class="bolt-slider__content"><img src="/img/5.jpg" alt="картинка 5"></div></li><li class="bolt-slider__item"><div class="bolt-slider__content"><img src="/img/6.jpg" alt="картинка 6"></div></li><li class="bolt-slider__item"><div class="bolt-slider__content"><img src="/img/7.jpg" alt="картинка 7"></div></li><li class="bolt-slider__item"><div class="bolt-slider__content"><img src="/img/8.jpg" alt="картинка 8"></div></li></ul></div><div class="bolt-slider__pagination pagination-2"></div></div><pre><code>window.addEventListener('load', () => {
+	const slider2 = new BoltSlider({
+		slider: '.slider-2',
+
+		gap: 40,
+		currentSlide: 3,
+		speed: 500,
+
+		sliderPrew: '.prew-2',
+		sliderNext: '.next-2',
+	});
+})
+</code></pre><script>window.addEventListener('load', () => {
+	const slider2 = new BoltSlider({
+		slider: '.slider-2',
+
+		gap: 40,
+		currentSlide: 3,
+		speed: 500,
+
+		sliderPrew: '.prew-2',
+		sliderNext: '.next-2',
+	});
+})
+</script></section><section class="container"><div class="bolt-slider slider-3 bolt-no-js"><button class="prew prew-3">Назад</button><button class="next next-3">Вперед</button><div class="bolt-slider__list-wrap"><div class="bolt-slider__list"><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Шифровальщица <a href="#">попросту</a> забыла ряд ключевых множителей и тэгов.</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Съешь ещё этих мягких <a href="#">французских</a> булок, да выпей [же] чаю. 1234567890.</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Щипцами брюки разлохмачу, Гребёнкой волосы взъерошу. Эффектно ожидать удачу До самой смерти я не брошу!</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Подъём с затонувшего эсминца легкобьющейся древнегреческой амфоры сопряжён с техническими трудностями.</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Завершён ежегодный съезд эрудированных школьников, мечтающих глубоко проникнуть в тайны физических явлений и химических реакций.</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Всё ускоряющаяся эволюция компьютерных технологий предъявила жёсткие требования к производителям как собственно вычислительной техники, так и периферийных устройств.</p></div></div><div class="bolt-slider__item"><div class="bolt-slider__content"><p>Шалящий фавн прикинул объём горячих звезд этих вьюжных царств.</p></div></div></div></div><div class="bolt-slider__pagination pagination-3"></div></div><pre><code>const slider3 = new BoltSlider({
+	slider: '.slider-3',
+
+	sliderPrew: '.prew-3',
+	sliderNext: '.next-3',
+
+	paginationWrap: '.pagination-3',
+	paginationTag: 'span',
+	paginationClass: 'bolt-slider__pagination-btn',
+});
+</code></pre><script>const slider3 = new BoltSlider({
+	slider: '.slider-3',
+
+	sliderPrew: '.prew-3',
+	sliderNext: '.next-3',
+
+	paginationWrap: '.pagination-3',
+	paginationTag: 'span',
+	paginationClass: 'bolt-slider__pagination-btn',
+});
+</script></section><footer><p><a href="https://github.com/uzinok/bolt-slider">github.com</a></p></footer></body></html>
