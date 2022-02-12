@@ -7,7 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "gulp",
 		"build": "gulp build",
-		"deploy": "cd build && rsync --archive --compress --delete . uzinok@yandex.ru:/var/http://bolt-slider.uzinok.ru/"
+		"deploy": "cd build && --archive --compress --delete . uzinok@yandex.ru:/var/http://bolt-slider.uzinok.ru/"
 	},
 	"author": "uzinok@yandex.ru",
 	"license": "ISC",
