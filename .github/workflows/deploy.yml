@@ -1,4 +1,4 @@
-name: Deploy to GitHub-Pages
+name: deploy
 
 on:
   push:
@@ -8,28 +8,20 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
-      - name: Check Out
-        uses: actions/checkout@v2.3.1
+      - users: actions/checkout@v2
+      - users: actions/setup-node@v1
         with:
-          persist-credentials: false
-
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-
-      - name: Installing Dependencies
-        run: npm ci
-
-      - name: Building
-        run: npm run build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FOLDER: ./build
-          BRANCH: master
-          SINGLE_COMMIT: false
+          node-version: ${{ matrix.node-version }}
+      # Setup key
+      # - run: set -eu
+      # - run: mkdir "$HOME/.ssh"
+      # - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
+      # - run: chmod 600 "$HOME/.ssh/key"
+      # Build
+      - run: npm ci
+      - run npm run build
+      - run: cd build && rsync --archive --compress --delete . uzinok@yandex.ru:/var/http://bolt-slider.uzinok.ru/
