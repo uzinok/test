@@ -16,12 +16,7 @@ jobs:
       - users: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      # Setup key
-      - run: set -eu
-      - run: mkdir "$HOME/.ssh"
-      - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
-      - run: chmod 600 "$HOME/.ssh/key"
       # Build
       - run: npm ci
       - run npm run build
-      - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . uzinok@yandex.ru:/var/http://bolt-slider.uzinok.ru/
+      - run: cd build && rsync  --archive --compress --delete . uzinok@yandex.ru:/var/http://bolt-slider.uzinok.ru/
